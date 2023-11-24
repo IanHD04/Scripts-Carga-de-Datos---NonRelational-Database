@@ -1,0 +1,409 @@
+db.usuarios.insertMany([
+  {codigo_usuario: 1,
+    dni: 74568121,
+    nombre: 'Juan',
+    apellido_paterno:'Perez',
+    apellido_materno: 'Lopez',
+    correo_electronico:'juanperez@gmail.com' ,
+    contrasenia: 'Juan123',
+    numero_telefonico: '915123456',
+    membresias: [
+        {codigo_membresia: 9000,}
+    ]
+  },
+
+  {codigo_usuario: 2,
+      dni: 77684212,
+      nombre: 'Maria',
+      apellido_paterno:'Gonzalez',
+      apellido_materno: 'Rodriguez',
+      correo_electronico:'mariagonzalez@gmail.com' ,
+      contrasenia: 'Maria456',
+      numero_telefonico: '925234567',
+      membresias: [
+        {codigo_membresia: 9100,}
+      ]
+  },
+
+  {codigo_usuario: 3,
+        dni: 75698423,
+        nombre: 'Pedro',
+        apellido_paterno:'Ramirez',
+        apellido_materno: 'Martinez',
+        correo_electronico:'pedroramirez@gmail.com' ,
+        contrasenia: 'Pedro789',
+        numero_telefonico: '984345678',
+        membresias: [
+        {codigo_membresia: 9200,}
+        ]
+  },
+
+   {codigo_usuario: 4,
+    dni: 74878914,
+    nombre: 'Laura',
+    apellido_paterno:'Diaz',
+    apellido_materno: 'Fernandez',
+    correo_electronico:'lauradiaz@gmail.com' ,
+    contrasenia: 'Laura567',
+    numero_telefonico: '995456789',
+    membresias: [
+    {codigo_membresia: 9300,}
+    ]
+    },
+
+    {codigo_usuario: 5,
+        dni: 74546165,
+        nombre: 'Carlos',
+        apellido_paterno:'Lopez',
+        apellido_materno: 'Gutierrez',
+        correo_electronico:'carloslopez@gmail.com' ,
+        contrasenia: 'Carlos123',
+        numero_telefonico: '987567890',
+        membresias: [
+            {codigo_membresia: 9400,}
+        ]
+     },
+
+]);
+
+
+
+db.membresias.insertMany([
+  {
+        codigo_membresia: 9000,
+        fecha_inicio: ISODate('2023-01-15'),
+        fecha_vencimiento: ISODate('2023-02-15'),
+        estado: 'Activa',
+        monto: 0.01,
+        beneficios: 'Exploración de Diseño Básico, Compartir con la Comunidad y Interfaz Intuitiva y Visualización en Realidad Virtual'
+  },
+
+
+
+  {
+      codigo_membresia: 9100,
+          fecha_inicio: ISODate('2023-02-20'),
+          fecha_vencimiento: ISODate('2023-03-20'),
+          estado: 'Activa',
+          monto: 15.01,
+          beneficios: 'Amplia Biblioteca de Diseño,Soporte Prioritario y Actualizaciones y Contenido Exclusivo,Colaboración en Tiempo Real,Ahorro de Tiempo y Dinero'
+
+  },
+
+  {
+        codigo_membresia: 9200,
+        fecha_inicio: ISODate('2023-03-10'),
+        fecha_vencimiento: ISODate('2023-04-10'),
+        estado: 'Activa',
+        monto: 15.01,
+        beneficios: 'Amplia Biblioteca de Diseño,Soporte Prioritario y Actualizaciones y Contenido Exclusivo,Colaboración en Tiempo Real,Ahorro de Tiempo y Dinero'
+
+  },
+
+   {
+        codigo_membresia: 9300,
+        fecha_inicio: ISODate('2023-07-01'),
+        fecha_vencimiento: ISODate('2023-08-01'),
+        estado: 'Pendiente',
+        monto: 0.01,
+        beneficios: 'Exploración de Diseño Básico, Compartir con la Comunidad y Interfaz Intuitiva y Visualización en Realidad Virtual'
+
+    },
+
+    {
+           codigo_membresia: 9400,
+           fecha_inicio: ISODate('2023-04-05'),
+           fecha_vencimiento: ISODate('2023-05-05'),
+           estado: 'Activa',
+           monto: 15.01,
+           beneficios: 'Amplia Biblioteca de Diseño,Soporte Prioritario y Actualizaciones y Contenido Exclusivo,Colaboración en Tiempo Real,Ahorro de Tiempo y Dinero'
+     },
+
+]);
+
+
+db.proyectos.insertMany([
+  {
+    codigo_proyecto: 1101,
+    codigo_usuario: 1,
+    nombre: 'Renovación de Sala de Estar',
+    fecha_de_creacion: ISODate('2023-10-01'),
+    descripcion: 'Proyecto de renovación de la sala de estar con un enfoque en colores y mobiliario moderno.',
+    estado: 'En Curso',
+    ultima_modificacion: ISODate('2023-10-15'),
+    categorias: [
+     { nombre_categoria: 'Minimalista' }
+     ],
+    espacios: [
+      {
+        tipo_de_espacio: 'Sala de Estar',
+        artefactos_electronicos: [
+          { codigo_artefacto_electronico: 120001 }
+        ],
+        decoraciones: [
+          { codigo_decoracion: 40000 },
+          { codigo_decoracion: 40001 }
+        ],
+        muebles: [
+          { codigo_mueble: 13000 },
+          { codigo_mueble: 13100 }
+        ]
+      }
+    ]
+  },
+  {
+    codigo_proyecto: 1102,
+    codigo_usuario: 2,
+    nombre: 'Diseño de Cocina Abierta',
+    fecha_de_creacion: ISODate('2023-10-02'),
+    descripcion: 'Proyecto de diseño de una cocina abierta para mejorar el flujo y la funcionalidad.',
+    estado: 'Completado',
+    ultima_modificacion: ISODate('2023-10-16'),
+    categorias: [
+     { nombre_categoria: 'Industrial' }
+     ],
+    espacios: [
+      {
+        tipo_de_espacio: 'Cocina',
+        artefactos_electronicos: [],
+        decoraciones: [],
+        muebles: [
+          { codigo_mueble: 13000 },
+          { codigo_mueble: 13400 }
+        ]
+      }
+    ]
+  },
+  {
+    codigo_proyecto: 1103,
+    codigo_usuario: 3,
+    nombre: 'Decoración de Dormitorio Principal',
+    fecha_de_creacion: ISODate('2023-10-03'),
+    descripcion: 'Proyecto de decoración del dormitorio principal con un estilo contemporáneo.',
+    estado: 'Archivado',
+    ultima_modificacion: ISODate('2023-10-17'),
+    categorias: [
+    { nombre_categoria: 'Rústico' }
+    ],
+    espacios: [
+      {
+        tipo_de_espacio: 'Dormitorio',
+        artefactos_electronicos: [
+          { codigo_artefacto_electronico: 120003 },
+          { codigo_artefacto_electronico: 120004 }
+        ],
+        decoraciones: [
+          { codigo_decoracion: 40002 },
+          { codigo_decoracion: 40003 }
+        ],
+        muebles: [
+          { codigo_mueble: 13300 },
+          { codigo_mueble: 13400 }
+        ]
+      }
+    ]
+  },
+  {
+    codigo_proyecto: 1104,
+    codigo_usuario: 4,
+    nombre: 'Rediseño de Espacio de Oficina en Casa',
+    fecha_de_creacion: ISODate('2023-10-04'),
+    descripcion: 'Proyecto de rediseño de un espacio de oficina en casa para mayor productividad.',
+    estado: 'En Curso',
+    ultima_modificacion: ISODate('2023-10-18'),
+    categorias: [
+    { nombre_categoria: 'Contemporáneo' }
+    ],
+    espacios: [
+      {
+        tipo_de_espacio: 'Oficina en Casa',
+        artefactos_electronicos: [],
+        decoraciones: [],
+        muebles: [
+          { codigo_mueble: 13200 },
+          { codigo_mueble: 13400 }
+        ]
+      }
+    ]
+  },
+
+  {
+    codigo_proyecto: 1105,
+    codigo_usuario: 5,
+    nombre: 'Diseño de Baño de Invitados',
+    fecha_de_creacion: ISODate('2023-10-05'),
+    descripcion: 'Proyecto de diseño de un baño de invitados con un enfoque en la elegancia y la funcionalidad.',
+    estado: 'Completado',
+    ultima_modificacion: ISODate('2023-10-19'),
+    categorias: [
+    { nombre_categoria: 'Clásico' },
+    ],
+    espacios: [
+      {
+        tipo_de_espacio: 'Baño de Invitados',
+        artefactos_electronicos: [],
+        decoraciones: [],
+        muebles: [
+          { codigo_mueble: 13200 },
+          { codigo_mueble: 13400 }
+        ]
+      }
+    ]
+  }
+]);
+
+
+
+db.artefactos_electronicos.insertMany([
+   {
+     codigo_artefacto_electronico: 120001,
+     nombre: 'Smart TV',
+     marca: 'Sony',
+     modelo: 'Bravia 4K',
+     precio: 599.99,
+     ancho: 55.5,
+     largo: 31.2,
+     altura: 5.6
+   },
+   {
+     codigo_artefacto_electronico: 120002,
+     nombre: 'Laptop',
+     marca: 'Dell',
+     modelo: 'XPS 15',
+     precio: 1299.99,
+     ancho: 13.3,
+     largo: 9.2,
+     altura: 0.7
+   },
+   {
+     codigo_artefacto_electronico: 120003,
+     nombre: 'Smartphone',
+     marca: 'Samsung',
+     modelo: 'Galaxy S21',
+     precio: 799.99,
+     ancho: 2.8,
+     largo: 6.2,
+     altura: 0.3
+   },
+   {
+     codigo_artefacto_electronico: 120004,
+     nombre: 'Tablet',
+     marca: 'Apple',
+     modelo: 'iPad Pro',
+     precio: 999.99,
+     ancho: 9.7,
+     largo: 7.01,
+     altura: 0.3
+   },
+   {
+     codigo_artefacto_electronico: 120005,
+     nombre: 'Soundbar',
+     marca: 'Bose',
+     modelo: 'SoundTouch 300',
+     precio: 399.99,
+     ancho: 4.3,
+     largo: 38.5,
+     altura: 2.2
+   }
+]);
+
+
+
+
+db.muebles.insertMany([
+  {
+    codigo_mueble: 13000,
+    nombre: 'Mesa de comedor',
+    modelo: 'Clásica',
+    marca: 'Mueblería ABC',
+    color: 'Marrón',
+    precio: 299.99,
+    ancho: 150.01,
+    largo: 80.01,
+    altura: 75.01
+  },
+  {
+    codigo_mueble: 13100,
+    nombre: 'Sofá seccional',
+    modelo: 'Contemporáneo',
+    marca: 'Muebles XYZ',
+    color: 'Gris',
+    precio: 599.99,
+    ancho: 200.01,
+    largo: 100.01,
+    altura: 85.01
+  },
+  {
+    codigo_mueble: 13200,
+    nombre: 'Silla de oficina',
+    modelo: 'Ergonómica',
+    marca: 'Muebles Ergo',
+    color: 'Negro',
+    precio: 149.99,
+    ancho: 60.01,
+    largo: 60.01,
+    altura: 120.01
+  },
+  {
+    codigo_mueble: 13300,
+    nombre: 'Cama individual',
+    modelo: 'Modernista',
+    marca: 'CamaCozy',
+    color: 'Blanco',
+    precio: 199.99,
+    ancho: 90.01,
+    largo: 200.01,
+    altura: 45.01
+  },
+  {
+    codigo_mueble: 13400,
+    nombre: 'Armario de almacenamiento',
+    modelo: 'Rústico',
+    marca: 'WoodWorks',
+    color: 'Roble',
+    precio: 349.99,
+    ancho: 99.99,
+    largo: 50.10,
+    altura: 180.10
+  }
+]);
+
+
+
+db.decoraciones.insertMany([
+  {
+    codigo_decoracion: 40000,
+    nombre: 'Cuadro Abstracto',
+    color: 'Azul',
+    textura: 'Textura abstracta en acrílico',
+    precio: 99.99
+  },
+  {
+    codigo_decoracion: 40001,
+    nombre: 'Alfombra Shaggy',
+    color: 'Gris',
+    textura: 'Pelo largo y suave',
+    precio: 49.99
+  },
+  {
+    codigo_decoracion: 40002,
+    nombre: 'Jarrón de Cerámica',
+    color: 'Blanco',
+    textura: 'Diseño elegante',
+    precio: 29.99
+  },
+  {
+    codigo_decoracion: 40003,
+    nombre: 'Cojines Decorativos',
+    color: 'Varios colores',
+    textura: 'Tejido de algodón',
+    precio: 19.99
+  },
+  {
+    codigo_decoracion: 40004,
+    nombre: 'Lámpara de Pie',
+    color: 'Negra',
+    textura: 'Estilo moderno',
+    precio: 79.99
+  }
+]);
